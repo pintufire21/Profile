@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Of Pintu Fire</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* FULL BLUR OVERLAY */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+/* START SCREEN */
+.start-screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.9);
+  backdrop-filter:blur(25px);
+  z-index:5;
+  transition:.6s ease;
+}
+
+/* PREMIUM START BUTTON */
+.start-btn{
+  padding:18px 48px;
+  border-radius:40px;
+  border:1px solid rgba(255,255,255,.25);
+  background:linear-gradient(135deg,#818589,#808080);
+  color:#fff;
+  font-size:17px;
+  letter-spacing:1px;
+  cursor:pointer;
+  box-shadow:
+    0 0 30px rgba(255,255,255,.25),
+    0 0 60px rgba(255,255,255,.25);
+  animation:pulse 2.5s infinite;
+  transition:.4s ease;
+}
+
+.start-btn i{
+  margin-right:8px;
+}
+
+.start-btn:hover{
+  transform:scale(1.12);
+  box-shadow:
+    0 0 40px rgba(255,255,255,.25),
+    0 0 80px rgba(255,255,255,.25);
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 20px rgba(255,255,255,.25)}
+  50%{box-shadow:0 0 60px rgba(255,255,255,.25)}
+  100%{box-shadow:0 0 20px rgba(255,255,255,.25)}
+}
+
+.container{
+  position:relative;
+  z-index:2;
+}
+
+.card{
+  width:320px;
+  padding:30px 25px;
+  text-align:center;
+  border-radius:20px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.avatar{
+  width:110px;
+  height:110px;
+  margin:auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid rgba(255,255,255,.4);
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+h1{
+  margin-top:15px;
+  font-family:'Playfair Display',serif;
+  font-weight:600;
+}
+
+.quote{
+  margin:10px 0 20px;
+  font-size:14px;
+  opacity:.9;
+  font-style:italic;
+}
+
+.tag{
+  font-size:13px;
+  opacity:.8;
+}
+
+.socials{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+.socials a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  transition:.3s;
+}
+
+.socials a:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.3);
+}
+
+/* VOLUME */
+.volume{
+  position:absolute;
+  top:20px;
+  left:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.discordapp.com/attachments/1090932473120161854/1452317673588392006/AudioCutter_Rakhlo_Tum_Chupaake256k.mp3?ex=69495fbc&is=69480e3c&hm=fc05a3473ee4776101d736e8fefe11ed5bb9a9310259070381d3b918c58c0918&" type="audio/mpeg">
+</audio>
+
+<div class="overlay"></div>
+
+<!-- START SCREEN -->
+<div class="start-screen" id="startScreen">
+  <button class="start-btn" onclick="startMusic()">
+    ENTER
+  </button>
+</div>
+
+<!-- VOLUME -->
+<div class="volume">
+  <i class="fas fa-headphones"></i>
+  <input type="range" min="0" max="100" value="40" id="volume">
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="avatar">
+      <img src="https://cdn.discordapp.com/attachments/1090932473120161854/1452349522519785564/9368e758c136c60e13814c7d64415978.gif">
+    </div>
+
+    <h1>Pintu Fire</h1>
+    <p class="quote">We never truly value a moment until it becomes a memory.</p>
+    <p class="tag">@Pintufire1 • Youtube / Instagram</p>
+
+<div class="socials">
+  <!-- Discord -->
+  <a href="https://discord.gg/UX947BxXd8" target="_blank" title="Discord">
+    <i class="fab fa-discord"></i>
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@Pintufire1" target="_blank" title="YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/pintufire1" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <!-- Your Social / Personal Website -->
+  <a href="https://pintu.vercel.app" target="_blank" title="My Website">
+    <i class="fas fa-globe"></i>
+  </a>
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+const volume = document.getElementById("volume");
+const startScreen = document.getElementById("startScreen");
+
+music.volume = volume.value / 100;
+
+volume.addEventListener("input", () => {
+  music.volume = volume.value / 100;
+});
+
+function startMusic(){
+  music.play();
+  startScreen.style.opacity = "0";
+  setTimeout(() => {
+    startScreen.style.display = "none";
+  }, 600);
+}
+</script>
+
+</body>
+</html>
